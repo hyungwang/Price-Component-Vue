@@ -8,7 +8,7 @@ const currency = "EUR";
 const form = ref([{ label: "Baseprice", price: 1, },]);
 
 const totalPrice = computed(() =>
-    Number(form.value.reduce((acc, cur) => acc + Number(cur.price), 0)).toFixed(2)
+    Number(form.value.reduce((acc, cur) => acc + Math.abs(Number(cur.price)), 0)).toFixed(2)
 );
 const addNewPrice = (item: { label: string, price: string }) => {
     form.value.push({
