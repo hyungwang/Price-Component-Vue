@@ -17,6 +17,7 @@ const addNewPrice = (item: { label: string, price: string }) => {
     });
 };
 const removeItem = (index: number) => {
+    if(index === 0) return;
     form.value.splice(index, 1);
 }
 </script>
